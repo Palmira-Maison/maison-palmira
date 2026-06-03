@@ -4,72 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maison Palmira</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: Georgia, serif;
-    background-color: #FAF8F5;
-    color: #1A1A1A;
-}
-
-header {
-    background: linear-gradient(to right, #C9A86A, #E8DCCF);
-    text-align: center;
-    padding: 80px 20px;
-}
-
-header h1 {
-    font-size: 50px;
-    margin: 0;
-}
-
-header p {
-    font-size: 20px;
-}
-
-section {
-    padding: 50px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-h2 {
-    text-align: center;
-    color: #C9A86A;
-}
-
-.produtos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    width: 250px;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.preco {
-    color: #C9A86A;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-footer {
-    background: #1A1A1A;
-    color: white;
-    text-align: center;
-    padding: 30px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
@@ -77,46 +13,86 @@ footer {
     <p>A Essência da Elegância</p>
 </header>
 
-<section>
-    <h2>Produtos em Destaque</h2>
+<nav>
+    <a href="#perfumes">Perfumes</a>
+    <a href="#cremes">Cremes</a>
+    <a href="#maquilhagem">Maquilhagem</a>
+    <a href="#contacto">Contacto</a>
+</nav>
 
-    <div class="produtos">
+<section id="perfumes">
+    <h2>Perfumes</h2>
 
-        <div class="card">
-            <h3>Palmira Gold</h3>
-            <p>Perfume sofisticado e marcante.</p>
-            <p class="preco">59,90 €</p>
-        </div>
+    <div class="produto">
+        <h3>Palmira Gold</h3>
+        <p>Perfume sofisticado.</p>
+        <p>59,90 €</p>
+        <button onclick="adicionar('Palmira Gold',59.90)">Adicionar ao Carrinho</button>
+    </div>
 
-        <div class="card">
-            <h3>Palmira Beige</h3>
-            <p>Fragrância elegante para o dia a dia.</p>
-            <p class="preco">49,90 €</p>
-        </div>
-
-        <div class="card">
-            <h3>Creme Luxe</h3>
-            <p>Hidratação profunda e aroma delicado.</p>
-            <p class="preco">24,90 €</p>
-        </div>
-
+    <div class="produto">
+        <h3>Palmira Noir</h3>
+        <p>Fragrância intensa.</p>
+        <p>64,90 €</p>
+        <button onclick="adicionar('Palmira Noir',64.90)">Adicionar ao Carrinho</button>
     </div>
 </section>
 
-<section>
-    <h2>Sobre Nós</h2>
+<section id="cremes">
+    <h2>Cremes</h2>
 
-    <p style="text-align:center;">
-        A Maison Palmira nasceu para oferecer perfumes,
-        cremes e maquilhagem inspirados na elegância,
-        sofisticação e beleza intemporal.
-    </p>
+    <div class="produto">
+        <h3>Luxe Cream</h3>
+        <p>Hidratação premium.</p>
+        <p>24,90 €</p>
+        <button onclick="adicionar('Luxe Cream',24.90)">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="produto">
+        <h3>Velvet Skin</h3>
+        <p>Pele suave e luminosa.</p>
+        <p>29,90 €</p>
+        <button onclick="adicionar('Velvet Skin',29.90)">Adicionar ao Carrinho</button>
+    </div>
+</section>
+
+<section id="maquilhagem">
+    <h2>Maquilhagem</h2>
+
+    <div class="produto">
+        <h3>Velvet Lipstick</h3>
+        <p>Batom premium.</p>
+        <p>19,90 €</p>
+        <button onclick="adicionar('Velvet Lipstick',19.90)">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="produto">
+        <h3>Golden Glow Foundation</h3>
+        <p>Base de alta cobertura.</p>
+        <p>34,90 €</p>
+        <button onclick="adicionar('Golden Glow Foundation',34.90)">Adicionar ao Carrinho</button>
+    </div>
+</section>
+
+<section id="carrinho">
+    <h2>Carrinho</h2>
+    <ul id="lista"></ul>
+    <h3>Total: <span id="total">0.00</span> €</h3>
+
+    <button onclick="enviarWhatsApp()">
+        Encomendar por WhatsApp
+    </button>
+</section>
+
+<section id="contacto">
+    <h2>Contacto</h2>
+    <p>WhatsApp: +351 912 345 678</p>
 </section>
 
 <footer>
     <p>Maison Palmira © 2026</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
-</html>
 </html>
